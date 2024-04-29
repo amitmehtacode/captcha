@@ -2,7 +2,7 @@ import {Alert, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useRef} from 'react';
 
 import {siteKey, baseUrl} from '../../utils';
-import ReCaptchaV3 from '@haskkor/react-native-recaptchav3';
+// import ReCaptchaV3 from '@haskkor/react-native-recaptchav3';
 
 const CaptchaV3Lib1 = () => {
   const captchaRef = useRef(null);
@@ -19,7 +19,7 @@ const CaptchaV3Lib1 = () => {
 
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <ReCaptchaV3
+      {/* <ReCaptchaV3
         ref={captchaRef}
         captchaDomain={baseUrl}
         siteKey={siteKey}
@@ -27,7 +27,7 @@ const CaptchaV3Lib1 = () => {
       />
       <TouchableOpacity onPress={handleRefreshToken}>
         <Text>Refresh Captcha</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   );
 };
