@@ -20,18 +20,19 @@ const CaptchaV2Lib2 = () => {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <Recaptcha
         ref={recaptcha}
         siteKey={siteKey}
         baseUrl={baseUrl}
         onVerify={onVerify}
         onExpire={onExpire}
+        lang="en"
         size="normal"
         theme="light"
       />
       <TouchableOpacity style={styles.buttonContainer} onPress={send}>
-        <Text style={styles.txt}>Open Captcha</Text>
+        <Text style={styles.txt}>Open Captcha v2</Text>
       </TouchableOpacity>
     </View>
   );
@@ -41,9 +42,7 @@ export default CaptchaV2Lib2;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    marginBottom: 20,
   },
   buttonContainer: {
     backgroundColor: 'orange',
