@@ -1,9 +1,11 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
 import ConfirmGoogleCaptcha from 'react-native-google-recaptcha-v2';
-import {baseUrl, siteKey} from '../../utils';
+import {baseUrl, siteKey, validateCaptchaToken} from '../../utils';
 
 const CaptchaV2Lib1 = () => {
+  const [token, setToken] = useState('');
+
   const captchaFormRef = useRef(null);
 
   const onMessage = event => {
@@ -15,6 +17,7 @@ const CaptchaV2Lib1 = () => {
         return;
       } else {
         console.log('Verified code from Google', event.nativeEvent.data);
+        setToken(event.nativeEvent.data);
         setTimeout(() => {
           captchaFormRef.current.hide();
           // do whatever you want here
@@ -39,6 +42,14 @@ const CaptchaV2Lib1 = () => {
           captchaFormRef.current.show();
         }}>
         <Text style={styles.txt}>Open Captcha</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.buttonContainer}
+        onPress={() => {
+          validateCaptchaToken(token);
+        }}>
+        <Text style={styles.txt}>Validate Captcha</Text>
       </TouchableOpacity>
     </View>
   );
