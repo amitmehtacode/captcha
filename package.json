@@ -35,6 +35,9 @@
     "react-test-renderer": "18.2.0",
     "typescript": "4.8.4"
   },
+  "resolutions": {
+    "react-native-webview": "12.0.2"
+  },
   "engines": {
     "node": ">=16"
   }
