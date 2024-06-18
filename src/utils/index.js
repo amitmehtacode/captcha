@@ -3,9 +3,9 @@ export const baseUrl = 'https://royallarchitecture.co.uk/'; // Place your server
 const SITE_VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify';
 export const siteKeyV3 = '6LeZuMwpAAAAAJBayu-9rw3P2fKUp_RnClT7K4LY'; // Place your reCAPTCHA 3 site key here
 
-export const validateCaptchaToken = async (token = '', callback = {}) => {
+export const validateCaptchaToken = async (isV2, token = '', callback = {}) => {
   const params = {
-    secret: siteKey,
+    secret: isV2 ? siteKey : siteKeyV3,
     response: token,
   };
 
@@ -26,11 +26,19 @@ export const validateCaptchaToken = async (token = '', callback = {}) => {
     console.log('res----->>>>', response);
 
     if (response?.ok && response?.status === 200) {
+      let r = await response?.json();
+
+
+      console.log('r00000000', r)
+
+      callback(response);
       // do you code here
     } else {
+      callback(response);
       // handle the failure case here
     }
   } catch (error) {
+    callback({});
     // handle the failure case here
   }
 };

@@ -3,7 +3,7 @@ import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
 import Recaptcha from 'react-native-recaptcha-that-works';
 import {baseUrl, siteKey} from '../../utils';
 
-const CaptchaV2Lib2 = () => {
+const CaptchaV2Lib2 = ({getToken}) => {
   const recaptcha = useRef();
 
   const send = () => {
@@ -13,6 +13,7 @@ const CaptchaV2Lib2 = () => {
 
   const onVerify = token => {
     console.log('success!', token);
+    getToken(token);
   };
 
   const onExpire = () => {
