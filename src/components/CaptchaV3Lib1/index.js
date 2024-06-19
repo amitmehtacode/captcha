@@ -45,15 +45,12 @@ const CaptchaV3Lib1 = ({getToken}) => {
 export default CaptchaV3Lib1;
 
 const styles = StyleSheet.create({
-  container: {
-    marginHorizontal: 10,
-  },
+  container: {},
   buttonContainer: {
+    margin: 20,
+    padding: 20,
+    borderRadius: 10,
     backgroundColor: 'orange',
-    paddingHorizontal: 40,
-    paddingVertical: 20,
-    borderRadius: 4,
-    marginBottom: 20,
   },
   txt: {
     fontSize: 15,

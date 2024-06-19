@@ -1,6 +1,7 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
-import CaptchaV2Lib2 from '../CaptchaV2Lib2';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+
+import CaptchaV2Lib2 from '../CaptchaV2Lib1';
 import CaptchaV3Lib1 from '../CaptchaV3Lib1';
 import {validateCaptchaToken} from '../../utils';
 
@@ -16,7 +17,7 @@ const HybridCaptcha = () => {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <CaptchaV2Lib2
         getToken={val => {
           console.log('V2 Token--------->>>>>', val);
@@ -30,11 +31,11 @@ const HybridCaptcha = () => {
         }}
       />
 
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={styles.buttonContainer}
         onPress={() => handleValidateToken(true)}>
         <Text style={styles.txt}>Validate V2 Token</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
       <TouchableOpacity
         style={styles.buttonContainer}
@@ -50,15 +51,12 @@ export default HybridCaptcha;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   buttonContainer: {
+    margin: 20,
+    padding: 20,
+    borderRadius: 10,
     backgroundColor: 'orange',
-    paddingHorizontal: 40,
-    paddingVertical: 20,
-    borderRadius: 4,
-    marginBottom: 20,
   },
   txt: {
     fontSize: 15,

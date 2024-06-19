@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
-import ConfirmGoogleCaptcha from 'react-native-google-recaptcha-v2';
+import ConfirmGoogleCaptcha from '../ConfirmGoogleCaptcha';
+// import ConfirmGoogleCaptcha from 'react-native-google-recaptcha-v2';
 import {baseUrl, siteKey, validateCaptchaToken} from '../../utils';
 
 const CaptchaV2Lib1 = () => {
@@ -58,11 +59,7 @@ const CaptchaV2Lib1 = () => {
 export default CaptchaV2Lib1;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+  container: {},
   buttonContainer: {
     backgroundColor: 'orange',
     paddingHorizontal: 40,
