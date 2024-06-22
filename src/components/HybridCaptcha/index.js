@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
-import CaptchaV2Lib2 from '../CaptchaV2Lib1';
+import CaptchaV2Lib2 from '../CaptchaV2Lib2';
 import CaptchaV3Lib1 from '../CaptchaV3Lib1';
 import {validateCaptchaToken} from '../../utils';
 
@@ -31,11 +31,11 @@ const HybridCaptcha = () => {
         }}
       />
 
-      {/* <TouchableOpacity
+      <TouchableOpacity
         style={styles.buttonContainer}
         onPress={() => handleValidateToken(true)}>
         <Text style={styles.txt}>Validate V2 Token</Text>
-      </TouchableOpacity> */}
+      </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.buttonContainer}

@@ -1,6 +1,7 @@
 import React, {useRef} from 'react';
 import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
-import Recaptcha from 'react-native-recaptcha-that-works';
+// import Recaptcha from 'react-native-recaptcha-that-works';
+import Recaptcha from '../RecaptchaV2';
 import {baseUrl, siteKey} from '../../utils';
 
 const CaptchaV2Lib2 = ({getToken}) => {
@@ -42,14 +43,12 @@ const CaptchaV2Lib2 = ({getToken}) => {
 export default CaptchaV2Lib2;
 
 const styles = StyleSheet.create({
-  container: {
-    marginBottom: 20,
-  },
+  container: {},
   buttonContainer: {
+    margin: 20,
+    padding: 20,
+    borderRadius: 10,
     backgroundColor: 'orange',
-    paddingHorizontal: 40,
-    paddingVertical: 20,
-    borderRadius: 4,
   },
   txt: {
     fontSize: 15,
